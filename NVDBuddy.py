@@ -47,7 +47,7 @@ def fetch_vulnerabilities_cpe(cpe_string):
             return parse_vulnerabilities(response.json())
         elif response.status_code == 403 or response.status_code == 503:
             print(f"[!] Error when fetching {base_url} ({response.status_code})")
-            time.sleep(3)
+            time.sleep(10)
     print("[!] Max attempts (3) exceeded, try again later.")
     sys.exit(0)
 
