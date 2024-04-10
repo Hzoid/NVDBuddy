@@ -24,12 +24,15 @@ options:
 ## Examples
 
 Fetch information about a list of known CVEs:
+
 `python3 NVDBuddy.py --cve CVE-2023-37470,CVE-2023-37471,CVE-2023-37472,CVE-2023-37473`
 
 Fetch all CVEs associated with jQuery 1.12.4:
+
 `python3 NVDBuddy.py --vendor jquery --product jquery --version 1.12.4 --platform a`
 
 Fetch all CVEs associated with Apache Webserver 2.4.18, in HTML table format:
+
 `python NVDBuddy.py --vendor apache --product http_server --version 2.4.18 --platform a --table`
 
 Example table format:
@@ -71,15 +74,19 @@ Rendered table:
 You can read about CPEs [here](https://nvd.nist.gov/products/cpe), but the TLDR is below:
 
 CPE (Common Platform Enumeration) is a naming scheme for identifying systems, software and hardware. The CPE is a single string comprised of multiple elements:
+
 `cpe:<cpe_version>:<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>:<sw_edition>:<target_sw>:<target_hw>:<other>`
 
 For example, the CPE representing Microsoft Windows 10 1607:
+
 `cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*`
 
 ## Installation
 
 Clone the repository to your local machine:
+
 `git clone https://github.com/hzoid/NVDBuddy`
 
 Install the requirements using pip:
+
 `pip3 install -r requirements.txt`
