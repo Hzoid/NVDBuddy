@@ -81,6 +81,17 @@ For example, the CPE representing Microsoft Windows 10 1607:
 
 `cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*`
 
+## The NVD API
+
+The NVD Vulnerabilities API [enforces rate limiting](https://nvd.nist.gov/developers/start-here) as such:
+
+"The public rate limit (without an API key) is 5 requests in a rolling 30 second window; the rate limit with an API key is 50 requests in a rolling 30 second window."
+
+I intend to eventually integrate the option to supply an API key into this script, however for now the following measures are implemented:
+
+* When searching with a given CPE string, if a 503/403 response code is received, the program waits 10 seconds before retrying. After 3 attempts, the program exits.
+* When fetching with a list of CVEs, if a 503/403 response code is received, the program waits 10 seconds before retrying and continuing the loop.
+
 ## Installation
 
 Clone the repository to your local machine:
