@@ -77,6 +77,8 @@ CPE (Common Platform Enumeration) is a naming scheme for identifying systems, so
 
 `cpe:<cpe_version>:<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>:<sw_edition>:<target_sw>:<target_hw>:<other>`
 
+CPE can accept wildcards (*) in place of elements, however the NVD API does not accept wildcards on the cpe_version, part, vendor, product or version elements.
+
 For example, the CPE representing Microsoft Windows 10 1607:
 
 `cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*`
