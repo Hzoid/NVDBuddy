@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from typing import List, Optional, Dict, Tuple
 from datetime import datetime, timedelta
 from enum import Enum
+from dotenv import load_dotenv
 
 @dataclass
 class Vulnerability:
@@ -40,22 +41,11 @@ class NVDClient:
     @staticmethod
     def _load_api_key() -> Optional[str]:
         """Load API key from environment variable or .env file"""
-        # Try environment variable first
-        api_key = os.getenv('NVD_API_KEY')
+        # Load environment variables from .env file
+        load_dotenv()
         
-        # If not in environment, try .env file
-        if not api_key:
-            try:
-                if os.path.exists('.env'):
-                    with open('.env', 'r') as f:
-                        for line in f:
-                            if line.startswith('NVD_API_KEY='):
-                                api_key = line.split('=')[1].strip()
-                                break
-            except IOError as e:
-                print(f"[!] Warning: Could not read .env file: {e}")
-        
-        return api_key
+        # Get API key from environment
+        return os.getenv('NVD_API_KEY')
 
     def _build_headers(self) -> Dict[str, str]:
         """Build request headers including API key if available"""
