@@ -95,7 +95,7 @@ The NVD Vulnerabilities API [enforces rate limiting](https://nvd.nist.gov/develo
 
 "The public rate limit (without an API key) is 5 requests in a rolling 30 second window; the rate limit with an API key is 50 requests in a rolling 30 second window."
 
-NVDBuddy supports API keys, and they can be provided through the command line (--api-key), or through a dotenv file or an OS environment file as `NVD_API_KEY`. API Keys can be requested from the [NVD website](https://nvd.nist.gov/developers/request-an-api-key).
+NVDBuddy supports API keys, and they can be provided either through the command line (--api-key), or through a dotenv file or OS environment variable as `NVD_API_KEY`. API Keys can be requested from the [NVD website](https://nvd.nist.gov/developers/request-an-api-key).
 
 ## Installation
 
