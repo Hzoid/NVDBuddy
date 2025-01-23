@@ -5,20 +5,23 @@ NVDBuddy is a tool to make finding CVEs and CVE information easier. It leverages
 ## Usage
 
 ```
-usage: NVDBuddy.py [-h] [--cve CVE | --cve-file CVE_FILE] [--vendor VENDOR] [--product PRODUCT] [--version VERSION] [--platform {a,h,o}] [--update UPDATE] [--table]
+usage: NVDBuddy.py [-h] [--cve CVE | --cve-file CVE_FILE] [--vendor VENDOR] [--product PRODUCT] [--version VERSION] [--platform {a,h,o}] [--update UPDATE] [--table] [--no-cache] [--api-key API_KEY] [-d]
 
 Fetch vulnerabilities for a given software package or specific CVEs.
 
 options:
   -h, --help           show this help message and exit
   --cve CVE            Manually supply CVEs as a comma separated list.
-  --cve-file CVE_FILE  Manually supply CVEs from a file path. Format should be one CVE per line.
+  --cve-file CVE_FILE  Manually supply CVEs from a file path.
   --vendor VENDOR      The vendor of the product.
   --product PRODUCT    The name of the product.
   --version VERSION    The version of the product, containing only numbers and periods.
   --platform {a,h,o}   The type of the product ('a' for applications, 'h' for hardware, 'o' for operating systems).
   --update UPDATE      The update/version qualifier (e.g., "SP1", "beta").
   --table              Output in table format.
+  --no-cache           Bypass cache and fetch fresh data
+  --api-key API_KEY    NVD API key (can also be set via NVD_API_KEY environment variable)
+  -d, --debug          Enable debug output
 ```
 
 ## Examples
@@ -89,10 +92,7 @@ The NVD Vulnerabilities API [enforces rate limiting](https://nvd.nist.gov/develo
 
 "The public rate limit (without an API key) is 5 requests in a rolling 30 second window; the rate limit with an API key is 50 requests in a rolling 30 second window."
 
-I intend to eventually integrate the option to supply an API key into this script, however for now the following measures are implemented:
-
-* When searching with a given CPE string, if a 503/403 response code is received, the program waits 10 seconds before retrying. After 3 attempts, the program exits.
-* When fetching with a list of CVEs, if a 503/403 response code is received, the program waits 10 seconds before retrying and continuing the loop.
+NVDBuddy supports API keys, and they can be provided through the command line (--api-key), or through a dotenv file or an OS environment file as `NVD_API_KEY`. API Keys can be requested from the [NVD website](https://nvd.nist.gov/developers/request-an-api-key).
 
 ## Installation
 
