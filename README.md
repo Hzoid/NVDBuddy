@@ -1,5 +1,5 @@
 # NVDBuddy
-![8435754fe16c9e8b9d590302937729fe968fffe0-600x527](https://github.com/user-attachments/assets/1a2e5540-61d2-4cd2-9c86-a791409fb5f1)
+![8435754fe16c9e8b9d590302937729fe968fffe0-600x527](https://github.com/user-attachments/assets/2ce77d73-a6ed-4f1a-947b-0b27ac4e7b92)
 
 ## Description
 
