@@ -1,5 +1,8 @@
 # NVDBuddy
+![8435754fe16c9e8b9d590302937729fe968fffe0-600x527](https://github.com/user-attachments/assets/1a2e5540-61d2-4cd2-9c86-a791409fb5f1)
+
 ## Description
+
 NVDBuddy is a tool to make finding CVEs and CVE information easier. It leverages the [NVD Vulnerabilities API](https://nvd.nist.gov/developers/vulnerabilities) to collate CVEs from a given [CPE](https://nvd.nist.gov/products/cpe), and extracts relevant and usable information to make reporting a little easier.
 
 ## Usage
